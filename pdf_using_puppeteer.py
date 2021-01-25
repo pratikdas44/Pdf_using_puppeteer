@@ -44,27 +44,27 @@ const sendmail = (todaydate) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://csjira.atlassian.net/wiki/spaces/~528303054/pages/484048932/Project+Portfolio+Dashboard+-+Nikhil', { waitUntil: 'networkidle0' }); // wait until page load
-  await page.type('#username', 'Pratikdas.Baghel@commscope.com');
+  await page.type('#username', 'xxxx'); //Atlassian email id
   await Promise.all([
     page.click('#login-submit'),
     page.waitForNavigation({ waitUntil: 'networkidle0' }),
   ]);
   await page.waitForTimeout(2000);
-  await page.type('#password', 'Nolan123@');
+  await page.type('#password', 'xxxx'); //Atlassian password
   await Promise.all([
     page.click('#login-submit'),
     page.waitForNavigation({ waitUntil: 'networkidle0' }),
   ]);
   await page.waitForTimeout(20000);
   await page.setViewport({
-    width: 1640,
-    height: 1480,
-    deviceScaleFactor: 1,
+    width: 1000,
+    height: 800,
+    deviceScaleFactor: 2,
+    isMobile: false
   });
   await page.pdf({
       path: filename,
-      width: 1640,
-      height: 1480,
+      format: "A3",
       printBackground: true,
       scale: 1,
       displayHeaderFooter: false,
