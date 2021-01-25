@@ -24,7 +24,7 @@ const auth_header = 'Basic ' + new Buffer.from(auth_string).toString('base64');
 
 (async () => {
   try {
-
+ 
     const browser = await puppeteer.launch({
       headless: true
     });
