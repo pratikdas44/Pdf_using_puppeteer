@@ -23,7 +23,7 @@ const sendmail = (todaydate) => {
             path: filename
             }]
       };
-
+ 
       // send mail with defined transport object
       transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
